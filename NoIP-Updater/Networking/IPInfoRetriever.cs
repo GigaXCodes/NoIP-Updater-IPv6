@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace NoIP_Updater.Networking
@@ -243,7 +244,7 @@ namespace NoIP_Updater.Networking
                 if (iface.OperationalStatus == OperationalStatus.Up && iface.NetworkInterfaceType != NetworkInterfaceType.Loopback && Properties.Settings.Default.adapter == ii /*&& iface.Id == adapter.Active*/)
                 {
                     // Build IPv6 Array
-                    _ipInfo.IPv6Local = new string[3];
+                    _ipInfo.IPv6Local = new string[4];
                     int i = 0;
 
                     // Each unicast address
